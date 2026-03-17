@@ -44,7 +44,7 @@ export default function App() {
     <ErrorBoundary>
     <div className="app">
       <header className="header">
-        <h1>🎉 NYC Venue Finder</h1>
+        <h1>🎉 NYC Venue Finder 🎉</h1>
         <p>Describe your event and AI will match you with the perfect spot</p>
       </header>
 

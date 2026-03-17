@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Venue {
+  id           Int    @id @default(autoincrement())
+  name         String
+  description  String?
+  neighborhood String?
+  capacity     Int?
+  vibe         String?
+  priceRange   String? @map("price_range")
+  minSpend     Int?    @map("min_spend")
+  features     String?
+
+  @@map("venues")
+}
