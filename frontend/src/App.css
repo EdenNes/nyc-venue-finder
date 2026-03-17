@@ -1,0 +1,126 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #222;
+}
+
+.app { min-height: 100vh; }
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: white;
+  text-align: center;
+  padding: 48px 20px 40px;
+}
+.header h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 8px; }
+.header p { font-size: 1.05rem; opacity: 0.75; }
+
+/* Main */
+.main { max-width: 780px; margin: 0 auto; padding: 32px 20px 60px; }
+
+/* Search Form */
+.search-form {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  margin-bottom: 32px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { margin-bottom: 16px; }
+
+label { font-size: 0.85rem; font-weight: 600; color: #555; text-transform: uppercase; letter-spacing: 0.04em; }
+.hint { font-weight: 400; text-transform: none; color: #aaa; letter-spacing: 0; }
+
+input, select, textarea {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  background: #fafafa;
+}
+input:focus, select:focus, textarea:focus { border-color: #0f3460; background: white; }
+textarea { resize: vertical; }
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0f3460, #1a1a2e);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-top: 4px;
+}
+.submit-btn:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Loading */
+.loading { text-align: center; padding: 40px; color: #666; }
+.spinner {
+  width: 40px; height: 40px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #0f3460;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Error / Empty */
+.error { background: #fff0f0; border: 1px solid #ffcccc; color: #cc0000; padding: 14px 18px; border-radius: 10px; margin-bottom: 24px; }
+.empty { text-align: center; color: #888; padding: 40px; }
+
+/* Results */
+.results h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; color: #1a1a2e; }
+.cards { display: flex; flex-direction: column; gap: 16px; }
+
+/* Venue Card */
+.venue-card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.07); display: flex; }
+.card-rank {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  color: white;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 16px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+.card-body { padding: 20px 22px; flex: 1; }
+.card-body h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
+.venue-link { color: #1a1a2e; text-decoration: none; }
+.venue-link:hover { text-decoration: underline; color: #0f3460; }
+.card-meta { font-size: 0.85rem; color: #666; margin-bottom: 6px; }
+.card-vibe { font-size: 0.85rem; color: #444; margin-bottom: 10px; font-style: italic; }
+.card-features { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.feature-tag { background: #f0f2f5; border-radius: 20px; padding: 3px 10px; font-size: 0.78rem; color: #555; }
+.card-reason {
+  font-size: 0.9rem;
+  color: #333;
+  background: #f7f8fa;
+  border-left: 3px solid #0f3460;
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .header h1 { font-size: 1.8rem; }
+}
