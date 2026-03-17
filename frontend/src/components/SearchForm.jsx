@@ -76,7 +76,7 @@ export default function SearchForm({ onSearch, loading }) {
       </div>
 
       <button type="submit" className="submit-btn" disabled={loading || (!form.eventType && !form.description)}>
-        {loading ? 'Searching...' : 'Find Venues ✨'}
+        {loading ? 'Searching...' : 'Find Venues '}
       </button>
     </form>
   );
